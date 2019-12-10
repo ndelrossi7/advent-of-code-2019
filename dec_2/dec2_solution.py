@@ -35,8 +35,7 @@ def pairs(lst):
         for v in range(100):
             lst[1] = n
             lst[2] = v
-            result = opcode(lst)
-            if result[0] == 19690720:
+            if opcode(lst)[0] == 19690720:
                 return (100 * n + v)
 
 part2ans = pairs(inputs)
