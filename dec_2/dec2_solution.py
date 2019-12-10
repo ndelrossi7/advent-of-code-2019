@@ -4,7 +4,7 @@ inputs = np.loadtxt('dec_2/dec2_input.txt', delimiter = ',', unpack = False)
 inputs = [int(x) for x in inputs]
 # Part 1 
 def opcode(lst):
-    l = lst
+    l = lst[:]
     place = 0
     for i in range(0, len(lst)+1, 4):
         if l[i] == 1:
@@ -24,8 +24,20 @@ def program1202(lst):
 prog1202 = program1202(inputs)
 
 part1ans = opcode(prog1202)[0]
-print(part1ans)
+# print(part1ans)
 
 # -------------------------
 
 # Part 2
+
+def pairs(lst):
+    for n in range(100):
+        for v in range(100):
+            lst[1] = n
+            lst[2] = v
+            result = opcode(lst)
+            if result[0] == 19690720:
+                return (100 * n + v)
+
+part2ans = pairs(inputs)
+# print(part2ans)
