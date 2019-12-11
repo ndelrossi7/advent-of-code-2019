@@ -1,3 +1,4 @@
+from tqdm import tqdm
 inputs = open("dec_3/dec3_input.txt", "r")
 data = inputs.readlines()
 first = data[0].split(',')
@@ -53,9 +54,9 @@ def all_steps(lst):
 
     return coords
 
-first_path = all_steps(first)
-second_path = all_steps(second)
-intersections = [coord for coord in first_path if coord in second_path]
+# first_path = all_steps(first)
+# second_path = all_steps(second)
+# intersections = [coord for coord in first_path if coord in second_path]
 
 
 my_coords = [(0, 0)]
